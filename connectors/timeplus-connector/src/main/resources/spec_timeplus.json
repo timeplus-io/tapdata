@@ -1,0 +1,121 @@
+{
+  "properties": {
+    "name": "Timeplus",
+    "icon": "icons/timeplus.png",
+    "doc": "${doc}",
+    "id": "timeplus"
+  },
+  "configOptions": {
+    "connection": {
+      "type": "object",
+      "properties": {
+        "tpHost": {
+          "required": true,
+          "type": "string",
+          "title": "${host}",
+          "default": "cloud.timeplus.com.cn",
+          "x-decorator": "FormItem",
+          "x-component": "Input",
+          "apiServerKey": "tp_host",
+          "x-index": 1
+        },
+        "tpPort": {
+          "required": true,
+          "type": "string",
+          "title": "${port}",
+          "default": "443",
+          "x-decorator": "FormItem",
+          "x-component": "InputNumber",
+          "apiServerKey": "tp_port",
+          "x-index": 2
+        },
+        "tpTenant": {
+          "required": true,
+          "type": "string",
+          "title": "${wsId}",
+          "x-decorator": "FormItem",
+          "x-component": "Input",
+          "apiServerKey": "tp_tenant",
+          "x-index": 3
+        },
+        "tpApi": {
+          "required": true,
+          "type": "string",
+          "title": "${api}",
+          "x-decorator": "FormItem",
+          "x-component": "Password",
+          "apiServerKey": "tp_apikey",
+          "x-index": 4
+        }
+      }
+    },
+    "node": {
+    }
+  },
+  "messages": {
+    "default": "en_US",
+    "en_US": {
+      "host": "Host Name",
+      "port": "Port",
+      "wsId": "Workspace ID",
+      "api": "API Key"
+    },
+    "zh_CN": {
+      "host": "服务器地址",
+      "port": "端口",
+      "wsId": "实例ID",
+      "api": "API Key"
+    },
+    "zh_TW": {
+      "host": "服务器地址",
+      "port": "端口",
+      "wsId": "賬號ID",
+      "api": "API Key"
+    }
+  },
+  "dataTypes": {
+    "OBJECT": {
+      "to": "TapMap"
+    },
+    "ARRAY": {
+      "to": "TapArray"
+    },
+    "NUMBER": {
+      "precision": [
+        1,
+        1000
+      ],
+      "scale": [
+        0,
+        1000
+      ],
+      "fixed": true,
+      "preferPrecision": 20,
+      "preferScale": 8,
+      "priority": 1,
+      "to": "TapNumber"
+    },
+    "INTEGER": {
+      "bit": 32,
+      "priority": 1,
+      "value": [
+        -2147483648,
+        2147483647
+      ],
+      "to": "TapNumber"
+    },
+    "BOOLEAN": {
+      "to": "TapBoolean"
+    },
+    "STRING": {
+      "byte": 200,
+      "priority": 1,
+      "defaultByte": 200,
+      "preferByte": 200,
+      "to": "TapString"
+    },
+    "TEXT": {
+      "to": "TapString"
+    }
+  }
+}
